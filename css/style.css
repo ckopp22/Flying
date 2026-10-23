@@ -1,0 +1,87 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #cfe6f2;
+  overscroll-behavior: none;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+/* Temporary debug readout, replaced by the real HUD in Phase 5 */
+#debug {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 8px);
+  left: calc(env(safe-area-inset-left) + 8px);
+  margin: 0;
+  padding: 6px 10px;
+  font: 12px/1.45 ui-monospace, Menlo, Consolas, monospace;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 6px;
+  pointer-events: none;
+  white-space: pre;
+}
+
+/* Touch steering stick, appears under the thumb */
+#stick {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+#stick[hidden] { display: none; }
+
+#stick-knob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  transform: translate(-50%, -50%);
+}
+
+/* Top-right buttons: pause, camera, reset */
+#buttons {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 8px);
+  right: calc(env(safe-area-inset-right) + 8px);
+  display: flex;
+  gap: 8px;
+}
+
+#buttons button {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  font-size: 22px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+#buttons button:active { background: rgba(0, 0, 0, 0.7); }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#cfe6f2">
+  <title>Airplane</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="importmap">
+    { "imports": { "three": "./lib/three.module.min.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <pre id="debug"></pre>
+  <div id="buttons">
+    <button id="btn-pause" type="button" aria-label="Pause">&#10074;&#10074;</button>
+    <button id="btn-camera" type="button" aria-label="Camera">&#128247;</button>
+    <button id="btn-reset" type="button" aria-label="Reset to runway">&#8634;</button>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
